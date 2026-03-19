@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
+
 /* ── BASE ── */
 html,
 body,
@@ -12,8 +14,6 @@ app-root {
 app-root {
   display: block;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
 
 /* ── TÍTULO PRINCIPAL ── */
 h1.text-center {
