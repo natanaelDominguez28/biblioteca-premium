@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── TÍTULO PRINCIPAL ── */
+h1.text-center {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #c5d8f5;
+  letter-spacing: 0.01em;
+  padding: 2rem 0 0.5rem;
+  position: relative;
+}
+
+h1.text-center::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: #3b82f6;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* ── TABLA PRINCIPAL ── */
+.container {
+  padding-top: 1rem;
+}
+
+.table {
+  background-color: #0c1220;
+  color: #a8c4e8;
+  border-color: #111a2a;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead tr {
+  background-color: #0f1828;
+}
+
+.table thead th {
+  background-color: #0f1828;
+  color: #2a3d5a;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-color: #111a2a;
+  padding: 14px 20px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.table tbody tr {
+  border-color: #0f1828;
+  transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background-color: #0f1828;
+  color: #c5d8f5;
+}
+
+.table tbody td {
+  border-color: #111a2a;
+  padding: 12px 20px;
+  vertical-align: middle;
+  color: #8ab2d8;
+  font-size: 0.9rem;
+}
+
+/* Quitar el efecto de columnas alternadas de Bootstrap y reemplazar con el propio */
+.table-striped-columns > tbody > tr > td:nth-child(even),
+.table-striped-columns > tbody > tr > th:nth-child(even) {
+  background-color: rgba(15, 24, 40, 0.4);
+}
+
+/* ── FOTO DEL AUTOR ── */
+.table tbody td img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #1a3050;
+  filter: brightness(0.9) saturate(0.85);
+  transition: filter 0.2s ease, border-color 0.2s ease;
+}
+
+.table tbody tr:hover td img {
+  filter: brightness(1) saturate(1);
+  border-color: #3b82f6;
+}
+
+/* ── LINK DEL ID AUTOR ── */
+.table tbody td a[data-bs-toggle="modal"] {
+  color: #3b82f6;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 3px 10px;
+  border-radius: 12px;
+  letter-spacing: 0.04em;
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+
+.table tbody td a[data-bs-toggle="modal"]:hover {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: rgba(59, 130, 246, 0.45);
+  color: #60a5fa;
+}
+
+/* ── BORDE DE LA TABLA PRINCIPAL ── */
+.table-bordered.border-primary {
+  border-color: #1a2a42 !important;
+}
+
+/* ── MODAL ── */
+.modal-content {
+  background-color: #0c1220;
+  border: 1px solid #1a2a42;
+  border-radius: 12px;
+  color: #a8c4e8;
+}
+
+.modal-header {
+  background-color: #0f1828;
+  border-bottom: 1px solid #111a2a;
+  padding: 18px 24px;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem !important;
+  font-weight: 600;
+  color: #c5d8f5;
+}
+
+.btn-close {
+  filter: invert(1) brightness(0.5);
+  transition: filter 0.15s;
+}
+
+.btn-close:hover {
+  filter: invert(1) brightness(1);
+}
+
+/* ── TABLA INTERNA DEL MODAL (biografía + libros) ── */
+.modal-body .table {
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+.modal-body .table thead th {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #1e3050;
+  background-color: transparent;
+  border-color: #111a2a;
+  padding: 10px 16px;
+}
+
+.modal-body .table tbody td {
+  color: #6a90b8;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  border-color: #111a2a;
+  padding: 12px 16px;
+}
+
+/* Tabla anidada de libros */
+.modal-body .table .table {
+  background-color: #0a101c;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.modal-body .table .table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.modal-body .table .table tbody tr:hover {
+  background-color: #0f1828;
+}
+
+.modal-body .table .table tbody td {
+  font-size: 0.87rem;
+  color: #7aa0c8;
+  padding: 10px 16px;
+  vertical-align: middle;
+}
+
+/* Fecha del libro */
+.modal-body .table .table tbody td:nth-child(2) {
+  color: #2a3d5a;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+/* Link "Ver libro" */
+.modal-body .table .table tbody td a[href] {
+  color: #3b82f6;
+  font-size: 0.78rem;
+  text-decoration: none;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 3px 10px;
+  border-radius: 10px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+
+.modal-body .table .table tbody td a[href]:hover {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: rgba(59, 130, 246, 0.45);
+  color: #60a5fa;
+}
+
+/* ── FOOTER DEL MODAL ── */
+.modal-footer {
+  background-color: #0a101c;
+  border-top: 1px solid #111a2a;
+  padding: 12px 24px;
+}
+
+.modal-footer .btn-secondary {
+  background-color: transparent;
+  border: 1px solid #1a2a42;
+  color: #3a5a80;
+  font-size: 0.82rem;
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 8px;
+  padding: 6px 16px;
+  transition: all 0.15s ease;
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #0f1828;
+  border-color: #3b82f6;
+  color: #60a5fa;
+}
+
+/* ── BACKDROP DEL MODAL ── */
+.modal-backdrop {
+  background-color: #04080f;
+}
+
+.modal-backdrop.show {
+  opacity: 0.85;
+}
+
+/* ── SCROLLBAR DEL MODAL ── */
+.modal-dialog-scrollable .modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-dialog-scrollable .modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-dialog-scrollable .modal-body::-webkit-scrollbar-thumb {
+  background: #1a2a42;
+  border-radius: 4px;
+}

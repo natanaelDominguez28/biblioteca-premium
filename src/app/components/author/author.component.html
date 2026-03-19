@@ -1,27 +1,25 @@
 <h1 class="text-center">Autores Populares a Nivel Mundial</h1>
 <br>
-<div class="container">
-    <table class="table table-striped-columns table-bordered border-primary text-center">
-        <thead>
-            <tr>
-                <th scope="col">ID Autor</th>
-                <th scope="col">Nombre del autor</th>
-                <th scope="col">Foto del Autor</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let a of authors">
-                <td>
-                    <a href="#" (click)="obtenerInformacionDeAutorPorId(a.author_id)" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">{{a.author_id}}</a>
-                </td>
-                <td>{{a.name}}</td>
-                <td><img src={{a.image}} alt="imagen autor"></td>
-            </tr>
-            <tr>
-        </tbody>
-    </table>
-</div>
+<table class="table table-striped-columns table-bordered border-primary text-center">
+    <thead>
+        <tr>
+            <th scope="col">ID Autor</th>
+            <th scope="col">Nombre del autor</th>
+            <th scope="col">Foto del Autor</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of authors">
+            <td>
+                <a href="#" (click)="obtenerInformacionDeAutorPorId(a.author_id)" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">{{a.author_id}}</a>
+            </td>
+            <td>{{a.name}}</td>
+            <td><img src={{a.image}} alt="imagen autor"></td>
+        </tr>
+        <tr>
+    </tbody>
+</table>
 <!-- Modal -->
 <div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">

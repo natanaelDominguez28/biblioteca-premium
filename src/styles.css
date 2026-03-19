@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+/* ================================================
+   Biblioteca Premium — estilos personalizados
+   Funciona sobre Bootstrap 5.3 sin modificarlo
+   Pegar en: src/styles.css (o styles.scss)
+   ================================================ */
+
+
+
+/* ── BASE ── */
+html,
+body,
+app-root {
+  background-color: #080c14 !important;
+  color: #a8c4e8;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100%;
+}
+ 
+app-root {
+  display: block;
+}
+
+
+
