@@ -30,7 +30,6 @@ export class AuthorComponent {
     this.authorService.getPopularAuthors().subscribe(
       (result) => {
         this.authors = result;
-        console.log(this.authors);
       }
     )
 
@@ -44,9 +43,4 @@ export class AuthorComponent {
       }
     )
   }
-
-  public obtenerLibrosDeAutor(){
-
-  }
-
 }
