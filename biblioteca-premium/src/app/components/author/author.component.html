@@ -1,0 +1,72 @@
+<h1 class="text-center">Autores Populares a Nivel Mundial</h1>
+<br>
+<div class="container">
+    <table class="table table-striped-columns table-bordered border-primary text-center">
+        <thead>
+            <tr>
+                <th scope="col">ID Autor</th>
+                <th scope="col">Nombre del autor</th>
+                <th scope="col">Foto del Autor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of authors">
+                <td>
+                    <a href="#" (click)="obtenerInformacionDeAutorPorId(a.author_id)" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">{{a.author_id}}</a>
+                </td>
+                <td>{{a.name}}</td>
+                <td><img src={{a.image}} alt="imagen autor"></td>
+            </tr>
+            <tr>
+        </tbody>
+    </table>
+</div>
+<!-- Modal -->
+<div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Libros de {{author.name}} </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Biografia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{author.info}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <table class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Libros</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let b of author.author_books">
+                                            <td>{{b.name}}</td>
+                                            <td>{{b.published_date}}</td>
+                                            <td><a href="{{b.url}}" target="_blank">Ver libro</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
